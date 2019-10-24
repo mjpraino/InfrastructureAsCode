@@ -92,7 +92,7 @@ Resources:
         TargetGroupArn:
           Ref: WebAppTargetGroup
       LoadBalancerArn:
-        Ref: WebbAppLB
+        Ref: WebAppLB
       Port: '80'
       Protocol: HTTP
   ALBListenerRule:
@@ -109,12 +109,12 @@ Resources:
   WebAppTargetGroup:
     Type: AWS::ElasticLoadBalancingV2::TargetGroup
     Properties:
-      HealthCheckIntervalSeconds: 35
+      HealthCheckIntervalSeconds: 10
       HealthCheckPath: /
       HealthCheckProtocol: HTTP
-      HealthCheckTimeoutSeconds: 30
+      HealthCheckTimeoutSeconds: 8
       HealthyThresholdCount: 2
-      Port: 80
+      Port: 8080
       Protocol: HTTP
       UnhealthyThresholdCount: 5
       VpcId: 
